@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Csigaverseny"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Csigaverseny" Height="750" Width="1000">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="473*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="startBtn" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25" Width="191" Grid.ColumnSpan="2"/>
+        <Button x:Name="ujFutamBtn" Content="Új futam" HorizontalAlignment="Left" Margin="186,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1"/>
+        <Button x:Name="ujBajnoksagBtn" Content="Új bajnokság" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FF6DF9BA" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FF6DF9BA" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,422,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FF6DF9BA" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <Label Content="A bajnokság állása:" HorizontalAlignment="Left" Margin="10,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2"/>
+        <Label Content="Hely" HorizontalAlignment="Left" Margin="155,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="Név" HorizontalAlignment="Left" Margin="236,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="1." HorizontalAlignment="Left" Margin="331,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="2." HorizontalAlignment="Left" Margin="391,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="3." HorizontalAlignment="Left" Margin="446,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="Pont" HorizontalAlignment="Left" Margin="512,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="RAJT" Grid.Column="1" HorizontalAlignment="Left" Margin="78,260,0,0" VerticalAlignment="Top" FontSize="100" RenderTransformOrigin="0.5,0.5" FontFamily="Franklin Gothic Heavy" Foreground="White">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="CÉL" Grid.Column="1" HorizontalAlignment="Left" Margin="699,343,0,0" VerticalAlignment="Top" FontSize="100" RenderTransformOrigin="0.5,0.5" FontFamily="Franklin Gothic Heavy" Foreground="White" Width="344">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="550" Margin="148,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="5" Fill="Black"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="550" Margin="931,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="5" Fill="Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="5" Margin="10,232,0,0" Stroke="Black" VerticalAlignment="Top" Width="975" Fill="Black" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="5" Margin="10,417,0,0" Stroke="Black" VerticalAlignment="Top" Width="975" Fill="Black" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="5" Margin="10,417,0,0" Stroke="Black" VerticalAlignment="Top" Width="975" Fill="Black" Grid.ColumnSpan="2"/>
+        <Rectangle x:Name="csiga1" HorizontalAlignment="Left" Height="180" Margin="10,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/csiga_1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="csiga2" HorizontalAlignment="Left" Height="180" Margin="10,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/csiga_2.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="180" Margin="10,422,0,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/csiga_3.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
 
     </Grid>
 </Window>

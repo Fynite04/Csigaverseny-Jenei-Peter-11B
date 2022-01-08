@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Csigaverseny"
         mc:Ignorable="d"
-        Title="Csigaverseny" Height="750" Width="1000">
+        Title="Csigaverseny" Height="780" Width="1010" MinHeight="780" MaxHeight="780" MinWidth="1010" MaxWidth="1010">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="27*"/>
             <ColumnDefinition Width="473*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="startBtn" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25" Width="191" Grid.ColumnSpan="2"/>
-        <Button x:Name="ujFutamBtn" Content="Új futam" HorizontalAlignment="Left" Margin="186,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1"/>
+        <Button x:Name="startBtn" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25" Width="191" Grid.ColumnSpan="2" Click="startBtn_Click"/>
+        <Button x:Name="ujFutamBtn" Content="Új futam" HorizontalAlignment="Left" Margin="186,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1" IsEnabled="False"/>
         <Button x:Name="ujBajnoksagBtn" Content="Új bajnokság" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1"/>
-        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FF6DF9BA" StrokeThickness="0" Grid.ColumnSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FF6DF9BA" StrokeThickness="0" Grid.ColumnSpan="2"/>
-        <Rectangle HorizontalAlignment="Left" Height="180" Margin="10,422,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FF6DF9BA" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <Rectangle x:Name="palya1" HorizontalAlignment="Left" Height="180" Margin="10,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <Rectangle x:Name="palya2" HorizontalAlignment="Left" Height="180" Margin="10,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
+        <Rectangle x:Name="palya3" HorizontalAlignment="Left" Height="180" Margin="10,422,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
         <Label Content="A bajnokság állása:" HorizontalAlignment="Left" Margin="10,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2"/>
         <Label Content="Hely" HorizontalAlignment="Left" Margin="155,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label Content="Név" HorizontalAlignment="Left" Margin="236,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
@@ -59,11 +59,32 @@
                 <ImageBrush ImageSource="/csiga_2.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="180" Margin="10,422,0,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
+        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="180" Margin="10,422,2,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/csiga_3.png"/>
             </Rectangle.Fill>
         </Rectangle>
+        <Label x:Name="helyezes3" Content="" Grid.Column="1" HorizontalAlignment="Center" Margin="0,467,0,0" VerticalAlignment="Top" FontSize="70" FontFamily="Franklin Gothic Book"/>
+        <Label x:Name="helyezes2" Content="" Grid.Column="1" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" FontSize="70" FontFamily="Franklin Gothic Book"/>
+        <Label x:Name="helyezes1" Content="" Grid.Column="1" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" FontSize="70" FontFamily="Franklin Gothic Book"/>
+        <Label Content="1." HorizontalAlignment="Left" Margin="167,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="2." HorizontalAlignment="Left" Margin="167,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="3." HorizontalAlignment="Left" Margin="167,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="csiga#" HorizontalAlignment="Left" Margin="236,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="csiga#" HorizontalAlignment="Left" Margin="236,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="csiga#" HorizontalAlignment="Left" Margin="236,710,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="331,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="331,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="331,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="393,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="393,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="393,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="448,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="448,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="448,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0 p" HorizontalAlignment="Left" Margin="518,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0 p" HorizontalAlignment="Left" Margin="518,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="0 p" HorizontalAlignment="Left" Margin="518,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
 
     </Grid>
 </Window>

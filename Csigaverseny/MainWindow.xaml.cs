@@ -19,16 +19,15 @@ namespace Csigaverseny
     public partial class MainWindow : Window
     {
         DispatcherTimer idozito = new DispatcherTimer();
-        List<Rectangle> csigak = new List<Rectangle>();
         List<Rectangle> helyek = new List<Rectangle>();
         List<CsigaVersenyzo> versenyzok = new List<CsigaVersenyzo>();
-
         Brush palyaSzin;
 
         public MainWindow()
         {
             InitializeComponent();
-            KezdoInicializalas();
+            CsigaInicializalo();
+            TablazatMegjelenito(false);
 
             idozito.Interval = TimeSpan.FromSeconds(0.01);
             idozito.Tick += new EventHandler(RaceEventHandler);
@@ -36,6 +35,7 @@ namespace Csigaverseny
             palyaSzin = palya1.Fill;
         }
 
+        // Adott időintervallumonként végrehajtja
         private void RaceEventHandler(object sender, EventArgs e)
         {
             // Random sebességek
@@ -63,7 +63,7 @@ namespace Csigaverseny
                         // #1
                         if (helyek.Count == 0)
                         {
-                            helyek.Add(csigak[i]);
+                            helyek.Add(versenyzok[i].CsigaObject);
                             versenyzok[i].Palya.Fill = Brushes.Gold;
                             versenyzok[i].OsszesPont += 3;
                             versenyzok[i].Helyezesek[0]++;
@@ -73,7 +73,7 @@ namespace Csigaverseny
                         // #2
                         else if(helyek.Count == 1)
                         {
-                            helyek.Add(csigak[i]);
+                            helyek.Add(versenyzok[i].CsigaObject);
                             versenyzok[i].Palya.Fill = Brushes.Silver;
                             versenyzok[i].OsszesPont += 2;
                             versenyzok[i].Helyezesek[1]++;
@@ -83,7 +83,7 @@ namespace Csigaverseny
                         // #3
                         else if (helyek.Count == 2)
                         {
-                            helyek.Add(csigak[i]);
+                            helyek.Add(versenyzok[i].CsigaObject);
                             versenyzok[i].Palya.Fill = Brushes.SandyBrown;
                             versenyzok[i].CelbaErt = true;
                             versenyzok[i].OsszesPont += 1;
@@ -95,26 +95,22 @@ namespace Csigaverseny
                             ujFutamBtn.IsEnabled = true;
 
                             MutasdBajnoksagAllast();
+                            TablazatMegjelenito(true);
                         }
                     }
-
                 }
             }
         }
 
-        private void KezdoInicializalas()
+        // Példányosítja a versenyzőket
+        private void CsigaInicializalo()
         {
-            // Csiga versenyzők
             versenyzok.Add(new CsigaVersenyzo(csiga1, palya1, helyezes1, "csiga1"));
             versenyzok.Add(new CsigaVersenyzo(csiga2, palya2, helyezes2, "csiga2"));
             versenyzok.Add(new CsigaVersenyzo(csiga3, palya3, helyezes3, "csiga3"));
-
-            // Csigák lista
-            csigak.Add(csiga1);
-            csigak.Add(csiga2);
-            csigak.Add(csiga3);
         }
 
+        // "Start" gomb megnyomásakor
         private void startBtn_Click(object sender, RoutedEventArgs e)
         {
             idozito.Start();
@@ -123,6 +119,7 @@ namespace Csigaverseny
             ujFutamBtn.IsEnabled = false;
         }
 
+        // Megjeleníti a táblázatban a megfelelő értékeket
         private void MutasdBajnoksagAllast()
         {
             var allas = CsigaVersenyzo.BajnoksagAllas(versenyzok);
@@ -132,7 +129,7 @@ namespace Csigaverseny
             allasNev_2.Content = allas[1].Nev;
             allasNev_3.Content = allas[2].Nev;
 
-            // Nyertes érmei
+            // 1. hely érmei
             allas1_1.Content = allas[0].Helyezesek[0];
             allas2_1.Content = allas[0].Helyezesek[1];
             allas3_1.Content = allas[0].Helyezesek[2];
@@ -153,7 +150,33 @@ namespace Csigaverseny
             allasPont_3.Content = $"{allas[2].OsszesPont} p";
         }
 
+        // "Új futam" gomb megnyomásakor
         private void ujFutamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PalyaVisszaallitasa();
+        }
+
+        // "Új bajnokság" gomb menyomásakor
+        private void ujBajnoksagBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                $"Hely          Név             1.          2.          3.          Pont\n " +
+                $"1.            {allasNev_1.Content}          {allas1_1.Content}           {allas2_1.Content}" +
+                $"           {allas3_1.Content}            {allasPont_1.Content}\n " +
+                $"2.            {allasNev_2.Content}          {allas1_2.Content}           {allas2_2.Content}" +
+                $"           {allas3_2.Content}            {allasPont_2.Content}\n " +
+                $"3.            {allasNev_3.Content}          {allas1_3.Content}           {allas2_3.Content}" +
+                $"           {allas3_3.Content}            {allasPont_3.Content}" +
+                $"", "A bajnokság végeredménye");
+
+            PalyaVisszaallitasa();
+            versenyzok.Clear();
+            CsigaInicializalo();
+            TablazatMegjelenito(false);
+        }
+
+        // Verseny visszaállítása alap állásba
+        private void PalyaVisszaallitasa()
         {
             // Gombok engedélyezése / letiltása
             startBtn.IsEnabled = true;
@@ -181,6 +204,52 @@ namespace Csigaverseny
             versenyzok[2].CelbaErt = false;
 
             helyek.Clear();
+        }
+
+        // Megjeleníti vagy eltünteti a táblázatot a paraméter alapján
+        private void TablazatMegjelenito(bool megjelenitse)
+        {
+            List<Label> elemek = new List<Label>();
+
+            // Fejléc
+            elemek.Add(header_Hely);
+            elemek.Add(header_Nev);
+            elemek.Add(header_1);
+            elemek.Add(header_2);
+            elemek.Add(header_3);
+            elemek.Add(header_Pont);
+
+            // 1. sor
+            elemek.Add(vHeader_1);
+            elemek.Add(allasNev_1);
+            elemek.Add(allas1_1);
+            elemek.Add(allas2_1);
+            elemek.Add(allas3_1);
+            elemek.Add(allasPont_1);
+
+            // 2. sor
+            elemek.Add(vHeader_2);
+            elemek.Add(allasNev_2);
+            elemek.Add(allas1_2);
+            elemek.Add(allas2_2);
+            elemek.Add(allas3_2);
+            elemek.Add(allasPont_2);
+
+            // 3. sor
+            elemek.Add(vHeader_3);
+            elemek.Add(allasNev_3);
+            elemek.Add(allas1_3);
+            elemek.Add(allas2_3);
+            elemek.Add(allas3_3);
+            elemek.Add(allasPont_3);
+
+            foreach (Label e in elemek)
+            {
+                if (megjelenitse)
+                    e.Visibility = Visibility.Visible;
+                else
+                    e.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Csigaverseny
         public Rectangle Palya { get { return palya; } set { palya = value; } }
         public Label VersenyHelyezes { get { return versenyHelyezes; } }
 
+        // Visszaküldi a bajnokság állását (1. elem nyertes) egy listában
         public static List<CsigaVersenyzo> BajnoksagAllas(List<CsigaVersenyzo> csigak)
         {
             var pontok = new List<int>();

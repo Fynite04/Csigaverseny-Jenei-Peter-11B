@@ -13,17 +13,17 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="startBtn" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25" Width="191" Grid.ColumnSpan="2" Click="startBtn_Click"/>
         <Button x:Name="ujFutamBtn" Content="Új futam" HorizontalAlignment="Left" Margin="186,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1" IsEnabled="False" Click="ujFutamBtn_Click"/>
-        <Button x:Name="ujBajnoksagBtn" Content="Új bajnokság" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1"/>
+        <Button x:Name="ujBajnoksagBtn" Content="Új bajnokság" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1" Click="ujBajnoksagBtn_Click"/>
         <Rectangle x:Name="palya1" HorizontalAlignment="Left" Height="180" Margin="10,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
         <Rectangle x:Name="palya2" HorizontalAlignment="Left" Height="180" Margin="10,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
         <Rectangle x:Name="palya3" HorizontalAlignment="Left" Height="180" Margin="10,422,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
         <Label Content="A bajnokság állása:" HorizontalAlignment="Left" Margin="10,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2"/>
-        <Label Content="Hely" HorizontalAlignment="Left" Margin="155,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="Név" HorizontalAlignment="Left" Margin="236,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="1." HorizontalAlignment="Left" Margin="331,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="2." HorizontalAlignment="Left" Margin="391,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="3." HorizontalAlignment="Left" Margin="446,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="Pont" HorizontalAlignment="Left" Margin="512,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="header_Hely" Content="Hely" HorizontalAlignment="Left" Margin="155,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="header_Nev" Content="Név" HorizontalAlignment="Left" Margin="236,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="header_1" Content="1." HorizontalAlignment="Left" Margin="331,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="header_2" Content="2." HorizontalAlignment="Left" Margin="391,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="header_3" Content="3." HorizontalAlignment="Left" Margin="446,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="header_Pont" Content="Pont" HorizontalAlignment="Left" Margin="512,607,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label Content="RAJT" Grid.Column="1" HorizontalAlignment="Left" Margin="78,260,0,0" VerticalAlignment="Top" FontSize="100" RenderTransformOrigin="0.5,0.5" FontFamily="Franklin Gothic Heavy" Foreground="White">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -67,10 +67,10 @@
         <Label x:Name="helyezes3" Content="" Grid.Column="1" HorizontalAlignment="Center" Margin="0,467,0,0" VerticalAlignment="Top" FontSize="70" FontFamily="Franklin Gothic Book"/>
         <Label x:Name="helyezes2" Content="" Grid.Column="1" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" FontSize="70" FontFamily="Franklin Gothic Book"/>
         <Label x:Name="helyezes1" Content="" Grid.Column="1" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" FontSize="70" FontFamily="Franklin Gothic Book"/>
-        <Label Content="1." HorizontalAlignment="Left" Margin="167,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="2." HorizontalAlignment="Left" Margin="167,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="3." HorizontalAlignment="Left" Margin="167,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label x:Name="allasNev_1" Content="csiga#" HorizontalAlignment="Left" Margin="236,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="vHeader_1" Content="1." HorizontalAlignment="Left" Margin="167,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="vHeader_2" Content="2." HorizontalAlignment="Left" Margin="167,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="vHeader_3" Content="3." HorizontalAlignment="Left" Margin="167,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasNev_1" Content="csiga#" HorizontalAlignment="Left" Margin="236,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1" Visibility="Visible"/>
         <Label x:Name="allasNev_2" Content="csiga#" HorizontalAlignment="Left" Margin="236,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label x:Name="allasNev_3" Content="csiga#" HorizontalAlignment="Left" Margin="236,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label x:Name="allas1_1" Content="0" HorizontalAlignment="Left" Margin="331,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
@@ -85,6 +85,5 @@
         <Label x:Name="allasPont_1" Content="0 p" HorizontalAlignment="Left" Margin="518,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label x:Name="allasPont_2" Content="0 p" HorizontalAlignment="Left" Margin="518,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label x:Name="allasPont_3" Content="0 p" HorizontalAlignment="Left" Margin="518,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-
     </Grid>
 </Window>

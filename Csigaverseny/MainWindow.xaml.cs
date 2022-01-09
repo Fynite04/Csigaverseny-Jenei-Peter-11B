@@ -21,8 +21,9 @@ namespace Csigaverseny
         DispatcherTimer idozito = new DispatcherTimer();
         List<Rectangle> csigak = new List<Rectangle>();
         List<Rectangle> helyek = new List<Rectangle>();
-
         List<CsigaVersenyzo> versenyzok = new List<CsigaVersenyzo>();
+
+        Brush palyaSzin;
 
         public MainWindow()
         {
@@ -31,6 +32,8 @@ namespace Csigaverseny
 
             idozito.Interval = TimeSpan.FromSeconds(0.01);
             idozito.Tick += new EventHandler(RaceEventHandler);
+
+            palyaSzin = palya1.Fill;
         }
 
         private void RaceEventHandler(object sender, EventArgs e)
@@ -64,7 +67,6 @@ namespace Csigaverseny
                             versenyzok[i].Palya.Fill = Brushes.Gold;
                             versenyzok[i].OsszesPont += 3;
                             versenyzok[i].Helyezesek[0]++;
-                            //helyezesek[i].Content = "1";
                             versenyzok[i].VersenyHelyezes.Content = "1";
                             versenyzok[i].CelbaErt = true;
                         }
@@ -75,7 +77,6 @@ namespace Csigaverseny
                             versenyzok[i].Palya.Fill = Brushes.Silver;
                             versenyzok[i].OsszesPont += 2;
                             versenyzok[i].Helyezesek[1]++;
-                            //helyezesek[i].Content = "2";
                             versenyzok[i].VersenyHelyezes.Content = "2";
                             versenyzok[i].CelbaErt = true;
                         }
@@ -87,7 +88,6 @@ namespace Csigaverseny
                             versenyzok[i].CelbaErt = true;
                             versenyzok[i].OsszesPont += 1;
                             versenyzok[i].Helyezesek[2]++;
-                            //helyezesek[i].Content = "3";
                             versenyzok[i].VersenyHelyezes.Content = "3";
                             idozito.Stop();
 
@@ -107,6 +107,7 @@ namespace Csigaverseny
             // Csiga versenyzők
             versenyzok.Add(new CsigaVersenyzo(csiga1, palya1, helyezes1, "csiga1"));
             versenyzok.Add(new CsigaVersenyzo(csiga2, palya2, helyezes2, "csiga2"));
+            versenyzok.Add(new CsigaVersenyzo(csiga3, palya3, helyezes3, "csiga3"));
 
             // Csigák lista
             csigak.Add(csiga1);
@@ -150,6 +151,36 @@ namespace Csigaverseny
             allasPont_1.Content = $"{allas[0].OsszesPont} p";
             allasPont_2.Content = $"{allas[1].OsszesPont} p";
             allasPont_3.Content = $"{allas[2].OsszesPont} p";
+        }
+
+        private void ujFutamBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Gombok engedélyezése / letiltása
+            startBtn.IsEnabled = true;
+            ujFutamBtn.IsEnabled = false;
+            ujBajnoksagBtn.IsEnabled = true;
+
+            // Csigák start pozícióba állása
+            csiga1.Margin = new Thickness(10, 52, 0, 0);
+            csiga2.Margin = new Thickness(10, 237, 0, 0);
+            csiga3.Margin = new Thickness(10, 422, 0, 0);
+
+            // Pályák alapszínűre állítása
+            palya1.Fill = palyaSzin;
+            palya2.Fill = palyaSzin;
+            palya3.Fill = palyaSzin;
+
+            // Múlt verseny helyezéseinek törlése
+            helyezes1.Content = "";
+            helyezes2.Content = "";
+            helyezes3.Content = "";
+
+            // Nem értek célba
+            versenyzok[0].CelbaErt = false;
+            versenyzok[1].CelbaErt = false;
+            versenyzok[2].CelbaErt = false;
+
+            helyek.Clear();
         }
     }
 }

@@ -12,7 +12,7 @@
             <ColumnDefinition Width="473*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="startBtn" Content="Start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="25" Width="191" Grid.ColumnSpan="2" Click="startBtn_Click"/>
-        <Button x:Name="ujFutamBtn" Content="Új futam" HorizontalAlignment="Left" Margin="186,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1" IsEnabled="False"/>
+        <Button x:Name="ujFutamBtn" Content="Új futam" HorizontalAlignment="Left" Margin="186,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1" IsEnabled="False" Click="ujFutamBtn_Click"/>
         <Button x:Name="ujBajnoksagBtn" Content="Új bajnokság" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" FontSize="25" Width="190" Grid.Column="1"/>
         <Rectangle x:Name="palya1" HorizontalAlignment="Left" Height="180" Margin="10,52,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
         <Rectangle x:Name="palya2" HorizontalAlignment="Left" Height="180" Margin="10,237,0,0" Stroke="Black" VerticalAlignment="Top" Width="980" Fill="#FFADFFAA" StrokeThickness="0" Grid.ColumnSpan="2"/>
@@ -59,7 +59,7 @@
                 <ImageBrush ImageSource="/csiga_2.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="180" Margin="10,422,2,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
+        <Rectangle x:Name="csiga3" HorizontalAlignment="Left" Height="180" Margin="10,422,-0.7,0" Stroke="Black" VerticalAlignment="Top" Width="192" Grid.ColumnSpan="2" StrokeThickness="0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/csiga_3.png"/>
             </Rectangle.Fill>

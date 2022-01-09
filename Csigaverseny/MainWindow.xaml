@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Csigaverseny"
         mc:Ignorable="d"
-        Title="Csigaverseny" Height="780" Width="1010" MinHeight="780" MaxHeight="780" MinWidth="1010" MaxWidth="1010">
+        Title="Csigaverseny" Height="800" Width="1010" MinHeight="800" MaxHeight="800" MinWidth="1010" MaxWidth="1010">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="27*"/>
@@ -70,21 +70,21 @@
         <Label Content="1." HorizontalAlignment="Left" Margin="167,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label Content="2." HorizontalAlignment="Left" Margin="167,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <Label Content="3." HorizontalAlignment="Left" Margin="167,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="csiga#" HorizontalAlignment="Left" Margin="236,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="csiga#" HorizontalAlignment="Left" Margin="236,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="csiga#" HorizontalAlignment="Left" Margin="236,710,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="331,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="331,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="331,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="393,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="393,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="393,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="448,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="448,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0" HorizontalAlignment="Left" Margin="448,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0 p" HorizontalAlignment="Left" Margin="518,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0 p" HorizontalAlignment="Left" Margin="518,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
-        <Label Content="0 p" HorizontalAlignment="Left" Margin="518,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasNev_1" Content="csiga#" HorizontalAlignment="Left" Margin="236,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasNev_2" Content="csiga#" HorizontalAlignment="Left" Margin="236,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasNev_3" Content="csiga#" HorizontalAlignment="Left" Margin="236,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas1_1" Content="0" HorizontalAlignment="Left" Margin="331,644,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas1_2" Content="0" HorizontalAlignment="Left" Margin="331,681,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas1_3" Content="0" HorizontalAlignment="Left" Margin="331,718,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas2_1" Content="0" HorizontalAlignment="Left" Margin="393,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas2_2" Content="0" HorizontalAlignment="Left" Margin="393,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas2_3" Content="0" HorizontalAlignment="Left" Margin="393,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas3_1" Content="0" HorizontalAlignment="Left" Margin="448,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas3_2" Content="0" HorizontalAlignment="Left" Margin="448,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allas3_3" Content="0" HorizontalAlignment="Left" Margin="448,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasPont_1" Content="0 p" HorizontalAlignment="Left" Margin="518,646,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasPont_2" Content="0 p" HorizontalAlignment="Left" Margin="518,683,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label x:Name="allasPont_3" Content="0 p" HorizontalAlignment="Left" Margin="518,720,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
 
     </Grid>
 </Window>
